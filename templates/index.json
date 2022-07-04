@@ -37,6 +37,7 @@
           "settings": {
             "title": "Service heading",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "icon": "shopify:\/\/shop_images\/Returns.png",
             "uspLinkUrl": ""
           }
         }
