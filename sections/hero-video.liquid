@@ -57,6 +57,11 @@
 					<div class="Icon-wrapper">{%- render 'icon' with 'scrolldown' -%}</div>
 			</div>
 		{%- endif -%}
+    {%- if section.settings.show_emark -%}
+    <div class="emark-container">
+        <div class="Emark-wrapper">{%- render 'icon' with 'emark' -%}</div>
+    </div>
+  {%- endif -%}
 		</div>
 
 	{%- if section.settings.page_width == 'fixed_width' -%}
@@ -237,6 +242,12 @@
       "type": "checkbox",
       "id": "show_scrolldown",
       "label": "Show scrolldown",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_emark",
+      "label": "Show E mark",
       "default": false
     }
   ],
