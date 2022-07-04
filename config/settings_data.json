@@ -1289,8 +1289,8 @@
           "default_logo_svg": "",
           "inverted_logo_svg": "",
           "mobile_logo_svg": "",
-          "logo_width": 150,
-          "logo_mobile_width": 120
+          "logo_width": 160,
+          "logo_mobile_width": 100
         }
       },
       "dbtfy-instagram-feed": {
