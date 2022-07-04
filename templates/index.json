@@ -49,12 +49,22 @@
             "icon": "shopify:\/\/shop_images\/Smile2.png",
             "uspLinkUrl": ""
           }
+        },
+        "bd4294cd-ff2b-4e34-9b3f-83b23dd32f70": {
+          "type": "service",
+          "settings": {
+            "title": "Service heading",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "icon": "shopify:\/\/shop_images\/Checkmark.png",
+            "uspLinkUrl": ""
+          }
         }
       },
       "block_order": [
         "1656942069c276e07d-0",
         "1656942069c276e07d-1",
-        "342df7ed-a5e0-495e-b2aa-88ec2359c324"
+        "342df7ed-a5e0-495e-b2aa-88ec2359c324",
+        "bd4294cd-ff2b-4e34-9b3f-83b23dd32f70"
       ],
       "settings": {
         "title": ""
