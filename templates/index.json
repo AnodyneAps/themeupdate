@@ -1,8 +1,34 @@
 {
   "sections": {
+    "16565958709e259b85": {
+      "type": "hero-video",
+      "settings": {
+        "page_width": "full_width",
+        "height": "medium",
+        "newvideo_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/84a75b8128604c1f85c23f215effa7ba.mp4",
+        "show_overlay": true,
+        "image_position": "center center",
+        "video_title": "Postureshirt core of flexibility",
+        "text_size": "medium",
+        "text_description": "<p>Brug denne tekst til at dele oplysninger om dit brand med dine kunder.<\/p>",
+        "text_description_size": "medium",
+        "button_label": "Shop Men",
+        "button_link": "shopify:\/\/products\/alignme-interactive-bra-blaa",
+        "second_button_label": "Shop women",
+        "second_button_link": "shopify:\/\/products\/alignme-interactive-bra-hvid",
+        "show_scrolldown": true
+      }
+    },
     "1654180360d9664fc4": {
       "type": "featured-collections",
       "blocks": {
+        "1654180360b14d67ac-2": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "andere-producten"
+          }
+        },
         "1654180360b14d67ac-0": {
           "type": "collection",
           "settings": {
@@ -16,19 +42,12 @@
             "title": "",
             "collection": "ruckenstutze"
           }
-        },
-        "1654180360b14d67ac-2": {
-          "type": "collection",
-          "settings": {
-            "title": "",
-            "collection": "andere-producten"
-          }
         }
       },
       "block_order": [
+        "1654180360b14d67ac-2",
         "1654180360b14d67ac-0",
-        "1654180360b14d67ac-1",
-        "1654180360b14d67ac-2"
+        "1654180360b14d67ac-1"
       ],
       "settings": {
         "show_on_desktop": true,
@@ -49,6 +68,7 @@
     }
   },
   "order": [
+    "16565958709e259b85",
     "1654180360d9664fc4"
   ]
 }
