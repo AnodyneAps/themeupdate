@@ -1284,6 +1284,8 @@
           "main_menu_link_list": "main-menu",
           "navigation_type": "right",
           "logo_link": true,
+          "default_logo": "shopify:\/\/shop_images\/anodyne-1-1.png",
+          "mobile_logo": "shopify:\/\/shop_images\/anodyne-1-1.png",
           "default_logo_svg": "",
           "inverted_logo_svg": "",
           "mobile_logo_svg": "",
