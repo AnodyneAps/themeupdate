@@ -16,7 +16,8 @@
         "button_link": "shopify:\/\/products\/alignme-interactive-bra-blaa",
         "second_button_label": "Shop women",
         "second_button_link": "shopify:\/\/products\/alignme-interactive-bra-hvid",
-        "show_scrolldown": true
+        "show_scrolldown": true,
+        "show_emark": false
       }
     },
     "1654180360d9664fc4": {
@@ -65,10 +66,39 @@
         "arrows": false,
         "dots": false
       }
+    },
+    "1656942069989ae2c9": {
+      "type": "feature-services",
+      "blocks": {
+        "1656942069c276e07d-0": {
+          "type": "service",
+          "settings": {
+            "title": "Service heading",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "uspLinkUrl": ""
+          }
+        },
+        "1656942069c276e07d-1": {
+          "type": "service",
+          "settings": {
+            "title": "Service heading",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "uspLinkUrl": ""
+          }
+        }
+      },
+      "block_order": [
+        "1656942069c276e07d-0",
+        "1656942069c276e07d-1"
+      ],
+      "settings": {
+        "title": "Services"
+      }
     }
   },
   "order": [
     "16565958709e259b85",
-    "1654180360d9664fc4"
+    "1654180360d9664fc4",
+    "1656942069989ae2c9"
   ]
 }
