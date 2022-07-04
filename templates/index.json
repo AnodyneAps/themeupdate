@@ -40,11 +40,21 @@
             "icon": "shopify:\/\/shop_images\/Returns.png",
             "uspLinkUrl": ""
           }
+        },
+        "342df7ed-a5e0-495e-b2aa-88ec2359c324": {
+          "type": "service",
+          "settings": {
+            "title": "Service heading",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "icon": "shopify:\/\/shop_images\/Smile2.png",
+            "uspLinkUrl": ""
+          }
         }
       },
       "block_order": [
         "1656942069c276e07d-0",
-        "1656942069c276e07d-1"
+        "1656942069c276e07d-1",
+        "342df7ed-a5e0-495e-b2aa-88ec2359c324"
       ],
       "settings": {
         "title": ""
