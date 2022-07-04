@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "1654180360d9664fc4": {
+      "type": "featured-collections",
+      "blocks": {
+        "1654180360b14d67ac-0": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "posture-shirt"
+          }
+        },
+        "1654180360b14d67ac-1": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "ruckenstutze"
+          }
+        },
+        "1654180360b14d67ac-2": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "andere-producten"
+          }
+        }
+      },
+      "block_order": [
+        "1654180360b14d67ac-0",
+        "1654180360b14d67ac-1",
+        "1654180360b14d67ac-2"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "full_width": false,
+        "title": "Collection list",
+        "subtitle": "",
+        "section_style": "section-blank",
+        "section_height": "medium",
+        "show_view_all": false,
+        "button_label": "View all",
+        "button_link": "shopify:\/\/collections",
+        "button_style": "btn--primary",
+        "slider_featured_collections": false,
+        "arrows": false,
+        "dots": false
+      }
+    }
+  },
+  "order": [
+    "1654180360d9664fc4"
+  ]
+}
