@@ -73,7 +73,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="grid__item {{ grid_item_width }} flex flex-fill {% if block %}collection-{{ block.id }}{% endif %}"
+<div class="grid__item custom__featuredCollection {{ grid_item_width }} flex flex-fill {% if block %}collection-{{ block.id }}{% endif %}"
   {% if block %}{{ block.shopify_attributes }}{% endif %}>
   <a href="{{ collection_link }}" class="image-link flex full {% if settings.collection_grid_animation %}collection_grid-animation{% endif %} {% if settings.collection_grid_card %}card{% endif %}">
     <div class="collection_grid-item collection_grid--{{ collection_height }} box media-wrapper {% if settings.collection_grid_card %}card-image{% else %}overlay{% endif %} {{ class }}">
@@ -94,12 +94,6 @@
       {%- endif -%}
     </div>
 
-    {%- if settings.collection_grid_card and collection_title_html != blank -%}
-      <div class="collection_grid-title-below card-body text-center">
-        {{ collection_title_html }}
-      </div>
-    {%- endif -%}
-
     {%- if settings.collection_grid_card -%}
       <div class="card-footer card-footer-xs">
         {%- if settings.collection_grid_products_count -%}
@@ -110,5 +104,16 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+
+    {%- if settings.collection_grid_card and collection_title_html != blank -%}
+      <div class="collection_grid-title-below card-body text-center">
+        {{ collection_title_html }}
+      </div>
+    {%- endif -%}
+
   </a>
+  {%- if block.settings.btn__shopnow !=blank -%}
+  <div class="btn__shopnow"><a class="shopnow" href="{{ collection_link }}">{{block.settings.btn__shopnow}}</a>
+  </div>
+  {%- endif -%}
 </div>

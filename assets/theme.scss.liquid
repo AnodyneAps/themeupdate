@@ -10233,21 +10233,18 @@ body:not(.dbtfy-wish_list-destroy) {
 .scrolldown {
   z-index: 2;
   position: absolute;
-  left: 49%;
+  left: 52%;
   bottom: 120px;
   display: inline-block;
-  transform: translateX(-51%);
+  transform: translateX(-48%);
 }
 .scrolldown  .Icon-wrapper .Icon--scrolldown {
-  width: 20px;
-  height: 10px;
+  width: 10px;
+  height: 40px;
   fill: $white;
   display: block;
-  margin: -5px;
+  margin: -35px;
   animation: animateVideoArrows 3s infinite;
-  .cle1,.cle2 {
-    fill: $cAccent;
-  }
 }
 .scrolldown .Icon-wrapper:nth-child(2) .Icon--scrolldown {
   animation-delay: -0.2s;
@@ -10288,9 +10285,6 @@ body:not(.dbtfy-wish_list-destroy) {
       animation: rotating 12s linear infinite;
     }
 }
-
-
-
 
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -10340,37 +10334,49 @@ body:not(.dbtfy-wish_list-destroy) {
 	.services-slider {
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
+    gap: 6px;
 		@include screenUp($postSmall){
 		grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
 		}
 	}
 	.services-item{
 		position: relative;
 		display: block;
-		border: 1px solid darken($white, 5%);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+		// border: 1px solid darken($white, 5%);
+    // border-top-left-radius: 5px;
+    // border-top-right-radius: 5px;
 		text-decoration: none;
     margin: 0 2px;
 		color: $cTextGray;
 		background-color: $white;
 		transition: .3s ease-in transform;
     min-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+
 		 .content {
-			padding: 2rem .5rem;
+			// padding: 2rem .5rem;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
 			.content-imagebox {
 				.img{
+          width: 70px;
+          padding: 1rem;
+          background-color: lighten($cPrimary, 50%);
+          border-top-left-radius: 5px;
+          border-bottom-right-radius:5px;
 					@include screenUp($postSmall){
-            filter: grayscale(0);
+            width: 150px;
           }
 				}
 			}
 			.content-textbox {
-				padding: 1rem 0;
+				padding: 2rem 0 1rem 1rem;
+        text-align: left;
 				.title{
-					font-size: clamp(0.9rem, 0vw, 1.2rem);
-					font-weight: 500;
+					font-size: clamp(1.2rem, 1vw, 2rem);
+					font-weight: 600;
 					margin-bottom: .5rem;
 					color:$cText;
           word-break: keep-all;
@@ -10379,12 +10385,23 @@ body:not(.dbtfy-wish_list-destroy) {
 					display: none;
 					@include screenUp($postSmall){
 						display: block;
-						font-size: .86rem;
+						font-size: .8rem;
 						font-weight: 400;
-						padding: 0 .5rem 1.5rem 0.5rem;
+						padding: 0 .5rem 1.5rem 0;
 
 					}
 				}
+        .Arrow-wrapper{
+          position: absolute;
+          bottom: 10px;
+          right: 2.5rem;
+          transition: right .3s ease-in;
+          .Icon--long-arrow-right{
+            width: 50px;
+            height: 10px;
+            fill: $cPrimary;
+          }
+        }
 			}
 		}
 
@@ -10397,6 +10414,11 @@ body:not(.dbtfy-wish_list-destroy) {
 					filter: grayscale(100%);
 				}
 			}
+      .content-textbox {
+        .Arrow-wrapper {
+          right: 1rem;
+        }
+      }
 		}
 	}
 }
