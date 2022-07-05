@@ -77,21 +77,24 @@
           "type": "collection",
           "settings": {
             "title": "",
-            "collection": "shoulder-support-1"
+            "collection": "shoulder-support-1",
+            "btn__shopnow": "shop now"
           }
         },
         "1654180360b14d67ac-0": {
           "type": "collection",
           "settings": {
             "title": "",
-            "collection": "posture-shirt"
+            "collection": "posture-shirt",
+            "btn__shopnow": ""
           }
         },
         "1654180360b14d67ac-1": {
           "type": "collection",
           "settings": {
             "title": "",
-            "collection": "frontpage"
+            "collection": "frontpage",
+            "btn__shopnow": ""
           }
         }
       },
