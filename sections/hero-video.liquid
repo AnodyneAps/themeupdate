@@ -62,6 +62,10 @@
         <div class="Emark-wrapper">{%- render 'icon' with 'emark' -%}</div>
     </div>
   {%- endif -%}
+      {% if section.settings.show_bottom_counter %}
+          {%- render 'flip-clock' -%}
+
+    {% endif %}
 		</div>
 
 	{%- if section.settings.page_width == 'fixed_width' -%}
@@ -248,6 +252,22 @@
       "type": "checkbox",
       "id": "show_emark",
       "label": "Show E mark",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Hero Counter"
+    },
+    {
+      "type": "text",
+      "id": "bottom_counter_text",
+      "label": "Add counter text",
+      "default": "We send your order in"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_counter",
+      "label": "Show Counter at the bottom of the website",
       "default": false
     }
   ],

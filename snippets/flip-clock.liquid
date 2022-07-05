@@ -1,0 +1,46 @@
+<div class="flip-container">
+	<span class="flip-outer-text">{%- if section.settings.bottom_counter_text != blank -%}
+		{{section.settings.bottom_counter_text -}}{%- endif -%}:</span>
+	<div class="flip-group">
+		<!-- <div class="flip-group-title">Hours</div> -->
+		<div class="flip-wrapper">
+			<div class="flip-card" data-hour-tens >
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+			<div class="flip-card" data-hour-ones>
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+		</div>
+	</div>
+	<div class="dots">:</div>
+	<div class="flip-group">
+		<!-- <div class="flip-group-title">Minutes</div> -->
+		<div class="flip-wrapper">
+			<div class="flip-card" data-minute-tens>
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+			<div class="flip-card" data-minute-ones>
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+		</div>
+	</div>
+	<div class="dots">:</div>
+	<div class="flip-group">
+		<!-- <div class="flip-group-title">Seconds</div> -->
+		<div class="flip-wrapper">
+			<div class="flip-card" data-second-tens>
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+			<div class="flip-card" data-second-ones>
+				<div class="top">0</div>
+				<div class="bottom">0</div>
+			</div>
+		</div>
+	</div>
+	<span class="close__btn"></span>
+</div>
