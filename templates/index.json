@@ -104,7 +104,7 @@
         "show_on_desktop": true,
         "show_on_mobile": true,
         "full_width": false,
-        "title": "Collection list",
+        "title": "",
         "subtitle": "",
         "section_style": "section-blank",
         "section_height": "medium",
