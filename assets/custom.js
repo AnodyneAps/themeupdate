@@ -1,6 +1,15 @@
 const closeBtn = document.querySelector(".close__btn");
 const flipBar = document.querySelector(".flip-container");
 
+window.addEventListener("scroll", () => {
+	let scroll = this.scrollY;
+	if(scroll > 699){ flipBar.classList.add("fixed-bottom")
+	}
+	else if(scroll < 500) {flipBar.classList.remove("fixed-bottom")
+}
+	
+});
+
 closeBtn.addEventListener("click", ()=>{
 	localStorage.setItem("className", "show-flip");
 	let classFromLocalStorage = localStorage.getItem("className");

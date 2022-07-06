@@ -1007,6 +1007,7 @@ $postMedium: $medium + $viewportIncrement;
 
 // Large
 $large: $postMedium;
+$customLarge: $postMedium + 200px;
 
 // Site width
 $siteWidth: {{ settings.page_wrapper }}px;
@@ -6388,6 +6389,7 @@ cite {
 .site-footer {
   @include colorOverwrite($colorFooter, $colorFooterDefault, $colorFooterBorder, $colorFooterText, $colorFooterPrimary, $colorFooterSecondary, $colorFooterButtonText, $colorFooterInput, $colorFooterErrors, $colorFooterSalesPrice);
   position: relative;
+  padding-bottom: 50px;
   z-index: $zindexBase;
 
   // Select
@@ -10157,6 +10159,7 @@ body:not(.dbtfy-wish_list-destroy) {
 .videoblock {
   height: 100%;
   position: relative;
+  margin-bottom: 3rem;
  .fullscreen-video-wrap {
     position: absolute;
     top: 0;
@@ -10235,7 +10238,7 @@ body:not(.dbtfy-wish_list-destroy) {
 .videoblock .hero-fixed-width__content .mega-title {
   text-transform: uppercase;
   color:  $white;
-  font-size: clamp(1.2rem, 5vw, 2.2rem); 
+  font-size: clamp(2rem, 5vw, 3rem); 
   font-weight: 300;
   .first{
     color: $cAccent;
@@ -10257,10 +10260,15 @@ body:not(.dbtfy-wish_list-destroy) {
 .scrolldown {
   z-index: 2;
   position: absolute;
-  left: 52%;
-  bottom: 120px;
   display: inline-block;
-  transform: translateX(-48%);
+  left: 57%;
+  bottom: 140px;
+  transform: translateX(-43%);
+  @include screenUp($postSmall){
+    bottom: 120px;
+    left: 52%;
+    transform: translateX(-48%);
+  }
 }
 .scrolldown  .Icon-wrapper .Icon--scrolldown {
   width: 10px;
@@ -10293,10 +10301,13 @@ body:not(.dbtfy-wish_list-destroy) {
 
 .emark-container{
   position: absolute;
-  bottom:60px;
+  bottom:130px;
   left: 20px;
   width:100px;
   height: 100px;
+  @include screenUp($postSmall){
+    bottom: 60px;
+  }
     .emark-path{
       fill: white;
     }
@@ -10340,6 +10351,10 @@ body:not(.dbtfy-wish_list-destroy) {
   }
 }
 .services{
+  display: none;
+  @include screenUp($postSmall){
+    display: block;
+  }
 	.services-wrapper{
 		margin-top: 5rem;
 		display: block;
@@ -10359,7 +10374,7 @@ body:not(.dbtfy-wish_list-destroy) {
 		display: grid;
 		grid-template-columns: repeat(2,1fr);
     gap: 6px;
-		@include screenUp($postSmall){
+		@include screenUp($postMedium){
 		grid-template-columns: repeat(4, 1fr);
 		}
 	}
@@ -10416,10 +10431,16 @@ body:not(.dbtfy-wish_list-destroy) {
 					}
 				}
         .Arrow-wrapper{
+          display:none;
           position: absolute;
-          bottom: 10px;
-          right: 2.5rem;
+          bottom: -1px;
+          right: .1rem;
           transition: right .3s ease-in;
+          @include screenUp($postSmall){
+            display: block;
+            bottom: 10px;
+            right: 2.5rem;
+          }
           .Icon--long-arrow-right{
             width: 50px;
             height: 10px;
@@ -10445,7 +10466,7 @@ body:not(.dbtfy-wish_list-destroy) {
       }
 		}
 	}
-}
+} 
 // site flip clock 
 .flip-container{
   display: none;
@@ -10458,24 +10479,49 @@ body:not(.dbtfy-wish_list-destroy) {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 50%;
-    background-color: $cLightGray;
+    width: 94%;
+    background-color: $cAccent;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cGF0aCBkPSJNLTIgMTBMMTAgLTJaTTEwIDZMNiAxMFpNLTIgMkwyIC0yIiBzdHJva2U9IiNmZjg5MWQiIHN0cm9rZS13aWR0aD0iNC41Ij48L3BhdGg+Cjwvc3ZnPg=="),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNjZTY5MGUgIj48L3N0b3A+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmODkxZCI+PC9zdG9wPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cpIj48L3JlY3Q+Cjwvc3ZnPg==");
+    flex-direction: column;
+    box-shadow: 0px 1px 8px rgba(0,0,0,0.2);
     font-size: 30px;
-    height: 100px;
-    gap: .15em;
+    gap:0;
+    height: 140px;
     z-index: 9999;
-    @include screenUp($postSmall){
-      height: 100px;
+    border-radius:5px;
+    @include screenUp($postMedium){
+      width: 80%;
+      height: 120px;
       border-radius:10px;
+      flex-direction: row;
+      gap: 1rem;
+ 
+    }
+    @include screenUp($customLarge){
+      width: 60%;
+      gap:2rem;
+    }
+
+    .flip-container-inner{
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
     }
     .flip-outer-text{
-      color: $cText;
-      font-size: 1.5rem;
+      color: $white;
+      font-size: 1.6rem;
       padding: 0 6px;
       letter-spacing: -1.5px;
       font-style: italic;
@@ -10513,7 +10559,7 @@ body:not(.dbtfy-wish_list-destroy) {
                   flex-direction: column;
           -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
                   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
-          border-radius: 2px;
+          border-radius: 5px;
   
           .top,
           .bottom,
@@ -10521,14 +10567,14 @@ body:not(.dbtfy-wish_list-destroy) {
           .bottom-flip {
             height:30px;
             line-height: 1;
-            padding: 15.2px;
+            padding: 15px;
             overflow: hidden;
           }
           .top,
           .top-flip {
-            background-color: lighten($cLightGray, 1%);
-            border-top-right-radius: 2px;
-            border-top-left-radius: 2px;
+            background-color: darken($cLightGray, 5%);
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
             border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
           }
           .bottom,
@@ -10540,8 +10586,8 @@ body:not(.dbtfy-wish_list-destroy) {
             -webkit-box-align: end;
                 -ms-flex-align: end;
                     align-items: flex-end;
-            border-bottom-right-radius: 2px;
-            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
           }
           .top-flip {
             position: absolute;
@@ -10569,24 +10615,26 @@ body:not(.dbtfy-wish_list-destroy) {
      }
      .close__btn{
       display: none;
-      color: $cText;
       position: absolute;
-      bottom: 40px;
-      right: 20px;
+      top:-50px;
+      right:-.5rem;
       z-index: 999;
       width: 30px;
       height: 30px;
+      border-radius: 5px;
       cursor: pointer;
       @include transition($transitions);
-      @include screenUp($postSmall){
-      display: block;
+      @include screenUp($postMedium){
+        top: 15px;
+        right: -4.5rem;
+        display:block;
       }
       &:hover{
         transform: scale(1.2);
         color: $cText;
-        background-color: lighten($cAccent, 10%);
+        background-color: lighten($cPrimary, 20%);
         border-radius: 5px;
-        border: 2px solid $white;
+        border: 2px solid darken($cPrimary, 5%);
       }
     }
     .close__btn::after,
@@ -10598,13 +10646,50 @@ body:not(.dbtfy-wish_list-destroy) {
       transform: translate(-85%, -50%);
       width: 18px;
       height: 1px;
-      background-color: $cText;
+      background-color: $white;
     }
     .close__btn::after{
       transform: rotate(-45deg);
     }
     .close__btn::before{
       transform: rotate(45deg);
+    }
+    &.fixed-bottom{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0;
+      background-color: $cAccent;
+      height: 40px;
+      font-size: 16px;
+      flex-direction: row !important;
+      .flip-outer-text{
+        color: $white;
+        font-size: 1.2rem;
+      }
+      .top,
+      .bottom,
+      .top-flip,
+      .bottom-flip {
+        height:16px !important;
+        padding: 8px !important;
+      }
+      .close__btn{
+        display: none;
+        background-color: transparent;
+        top:2px;
+        right:-5rem;
+        @include screenUp($postSmall){
+        display: block;
+        }
+        }
+        .close__btn::after,
+        .close__btn::before{
+          background-color: $white;
+        }
+        .dots{
+          color: $white;
+         }
     }
    }
    &.hide{
