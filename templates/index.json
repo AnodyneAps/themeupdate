@@ -121,11 +121,49 @@
         "arrows": false,
         "dots": false
       }
+    },
+    "1657200190f72ca1c0": {
+      "type": "profile-text",
+      "blocks": {
+        "1657200190267fd417-0": {
+          "type": "Profile-Text",
+          "settings": {
+            "title": "",
+            "code": "<p>This section can be used to code your own custom layout<\/p>",
+            "text_alignment": "text-center",
+            "status1_number": "100.000",
+            "status1_label": "Happy Customers",
+            "status1_link": "shopify:\/\/collections\/all",
+            "status2_number": "100.000",
+            "status2_label": "Happy Customers",
+            "status2_link": "shopify:\/\/collections\/all",
+            "status3_number": "100.000",
+            "status3_label": "Happy Customers",
+            "status3_link": "shopify:\/\/collections\/all",
+            "status4_number": "100.000",
+            "status4_label": "Happy Customers",
+            "status4_link": "shopify:\/\/collections\/all",
+            "vendor_image_position": "center center",
+            "vendor_text": "Anodyne presents"
+          }
+        }
+      },
+      "block_order": [
+        "1657200190267fd417-0"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "padding_section": true,
+        "section_style": "section-pattern-primary",
+        "wrapper_size": ""
+      }
     }
   },
   "order": [
     "16565958709e259b85",
     "1656942069989ae2c9",
-    "1654180360d9664fc4"
+    "1654180360d9664fc4",
+    "1657200190f72ca1c0"
   ]
 }
