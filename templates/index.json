@@ -128,7 +128,7 @@
         "1657200190267fd417-0": {
           "type": "Profile-Text",
           "settings": {
-            "title": "",
+            "title": "Why choose posture clothing from ActivePosture®?",
             "code": "<p>This section can be used to code your own custom layout<\/p>",
             "text_alignment": "text-center",
             "status1_number": "100.000",
@@ -143,6 +143,7 @@
             "status4_number": "100.000",
             "status4_label": "Happy Customers",
             "status4_link": "shopify:\/\/collections\/all",
+            "vendor_image": "shopify:\/\/shop_images\/logo1.04c09b4d.png",
             "vendor_image_position": "center center",
             "vendor_text": "Anodyne presents"
           }
