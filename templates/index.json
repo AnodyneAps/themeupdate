@@ -17,7 +17,9 @@
         "second_button_label": "Shop women",
         "second_button_link": "shopify:\/\/products\/alignme-interactive-bra-hvid",
         "show_scrolldown": true,
-        "show_emark": true
+        "show_emark": true,
+        "bottom_counter_text": "We send your order in",
+        "show_bottom_counter": true
       }
     },
     "1656942069989ae2c9": {
