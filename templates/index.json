@@ -129,9 +129,9 @@
           "type": "Profile-Text",
           "settings": {
             "title": "Why choose posture clothing from ActivePosture®?",
-            "code": "<p>This section can be used to code your own custom layout<\/p>",
+            "code": "<p><a href=\"https:\/\/www.activeposture.co.uk\/collections\/posture-shirt\"><span style=\"text-decoration:underline\">Posture Shirt™<\/span><\/a> is the best choice when looking for pain reduction in neck, shoulders and back or if you are looking for a faster recovery after an injury, for instance, a shoulder injury. The shirt may also help prevent injuries when you do gym activities or other physical activities. How can the shirt do that? The shirt is anatomically constructed with NeuroBands™, which is tension panel bands that activates and stimulate specific muscle groups and joints to help improve your posture. This controlled resistance causes your muscles to contract to increase strength and keep you in an upright position. For those suffering from a shoulder injury or have recently had surgery, we recommend the zipper version of our Posture Shirt. We also have a wide selection of other <a href=\"https:\/\/www.activeposture.co.uk\/collections\/back-support\"><span style=\"text-decoration:underline\">products that provide back support<\/span><\/a>, including three different posture braces and a lumbar support belt. What these products have in common are posture correction and pain relief.<\/p>",
             "text_alignment": "text-center",
-            "status1_number": "100.000",
+            "status1_number": "100.000+",
             "status1_label": "Happy Customers",
             "status1_link": "shopify:\/\/collections\/all",
             "status2_number": "100.000",
