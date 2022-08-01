@@ -107,11 +107,8 @@
           {%- endcapture -%}
 
           {%- if settings.dbtfy_discount_saved -%}
-            <span class="badge grid-product__badge grid-product__badge-{{ settings.tag_placement }}">
-              <span class="{{ settings.icon }}">local_offer</span>
-              <span class="product-badge-text tooltip-position-bottom">
-                {{ 'products.general.save_html' | t: saved_amount: discount_price }}
-              </span>
+            <span class="badge triangle__badge grid-product__badge grid-product__badge-{{ settings.tag_placement }}">
+              <span class="triangle_porcent"> {%- comment -%} you can add a disount price amount with porcent tag{{ discount_price }}{%- endcomment -%}%</span>
             </span>
           {%- endif -%}
 
