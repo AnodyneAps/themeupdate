@@ -1,3 +1,58 @@
+(function(a){
+	$('.youtube-cover-image, .youtube-button').on('click', function (e) {
+		$('.youtube-cover-image , .youtube-button').hide();
+	});
+	// scroll smothing for readmore button
+	$('.btn-readmore').on('click', function () {
+		$('html, body').animate({ scrollTop: $(this.hash).offset().top - 80 }, 1000);
+		return false;
+	});
+
+})(jQuery);
+
+
+// variables for accordios
+var accordionBtn = document.querySelectorAll('.accordion__title');
+var allTexts = document.querySelectorAll('.accordion__flex');
+var accIcon = document.querySelectorAll('.accIcon');
+
+// event listener
+accordionBtn.forEach(function (el) {
+	el.addEventListener('click', toggleAccordion)
+});
+
+// function
+function toggleAccordion(el) {
+	var targetText = el.currentTarget.nextElementSibling.classList;
+	var targetAccIcon = el.currentTarget.children[0];
+	var target = el.currentTarget;
+
+	if (targetText.contains('accordion-show')) {
+		targetText.remove('accordion-show');
+		targetAccIcon.classList.remove('anime');
+		target.classList.remove('accordionTitleActive');
+	}
+	else {
+		accordionBtn.forEach(function (el) {
+			el.classList.remove('accordionTitleActive');
+
+			allTexts.forEach(function (el) {
+				el.classList.remove('accordion-show');
+			})
+
+			accIcon.forEach(function (el) {
+				el.classList.remove('anime');
+			})
+
+		})
+
+		targetText.add('accordion-show');
+		target.classList.add('accordionTitleActive');
+		targetAccIcon.classList.add('anime');
+	}
+}
+
+
 const closeBtn = document.querySelector(".close__btn");
 const flipBar = document.querySelector(".flip-container");
 

@@ -287,7 +287,9 @@
       {%- liquid
         render "dbtfy-recently-viewed"
         section "dbtfy-instagram-feed"
+        if template != 'index'
         section "guarantee"
+        endif 
         section "footer"
       -%}
 

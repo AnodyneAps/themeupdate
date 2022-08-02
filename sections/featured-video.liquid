@@ -38,16 +38,23 @@
         <div class="grid {% if full_width %}grid-full{% else %}grid-spacer{% endif %}">
           <!-- Blocks -->
           {%- for block in section.blocks -%}
-            <div class="grid__item {{ column_width }}" 
+            <div class="grid__item" 
               {{ block.shopify_attributes }}>
               <div class="media-wrapper video-wrapper">
                 {%- if block.settings.video_url == blank -%}
                   <iframe class="media lazyload" data-src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
                 {%- else -%}
                   {%- if block.settings.video_url.type == "youtube" -%}
-                    <iframe class="media lazyload" data-src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="media yt-video lazyload" data-src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                    {%- if block.settings.video_cover_image or block.settings.video_cover_image_fr !=blank -%}
+                    <div class="youtube-cover-image"
+                     style=" background-image:url('{{block.settings.video_cover_image | img_url: '1920x1080'}}')">
+                         {%- if block.settings.animated_button -%}
+                           <span class="youtube-button"></span>
+                       {%- endif -%}
+                     </div>
+                    {%- endif -%}
                   {%- endif -%}
-
                   {%- if block.settings.video_url.type == "vimeo" -%}
                     <iframe class="media lazyload" data-src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?color={{ settings.color_secondary | remove: "#" }}&byline=0&portrait=0&badge=0" width="850" height="480" frameborder="0" allowfullscreen></iframe>
                   {%- endif -%}
@@ -124,6 +131,12 @@
         "type": "video",
         "name": "t:sections.featured_video.blocks.video.name",
         "settings": [
+        {
+          "type": "image_picker",
+          "id": "video_cover_image",
+          "label": "Video cover image NL",
+          "info": "Add an image with 1920x1080px, not more than 100k."
+          },
           {
             "type": "text",
             "id": "title",
@@ -135,6 +148,12 @@
             "id": "video_url",
             "label": "t:sections.featured_video.blocks.video.settings.video_url.label",
             "accept": ["youtube", "vimeo"]
+          },
+          {
+            "type": "checkbox",
+            "id": "animated_button",
+            "label": "Add animated button on cover image",
+            "default": false
           }
         ]
       }
