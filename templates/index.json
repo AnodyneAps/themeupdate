@@ -240,7 +240,7 @@
         "show_view_all": true,
         "button_label": "See more products",
         "button_link": "",
-        "button_style": "btn-outline-primary",
+        "button_style": "btn--primary",
         "slider_related_products": true,
         "arrows": true,
         "dots": true,
