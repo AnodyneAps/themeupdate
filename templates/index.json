@@ -314,6 +314,39 @@
         "subtitle": "See our presentation video",
         "section_style": "section-default"
       }
+    },
+    "16595131862acfe816": {
+      "type": "featured-accordions",
+      "blocks": {
+        "1659513186ec7e9cae-0": {
+          "type": "Accordion",
+          "settings": {
+            "accordion_title": "",
+            "accordion__inner-title": "Working on Desk could be a problem",
+            "accordion__description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "accordion__buttontext": "Button text",
+            "accordion__LinkUrl": ""
+          }
+        },
+        "1659513186ec7e9cae-1": {
+          "type": "Accordion",
+          "settings": {
+            "accordion_title": "",
+            "accordion__inner-title": "Working on Desk could be a problem",
+            "accordion__description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
+            "accordion__buttontext": "Button text",
+            "accordion__LinkUrl": ""
+          }
+        }
+      },
+      "block_order": [
+        "1659513186ec7e9cae-0",
+        "1659513186ec7e9cae-1"
+      ],
+      "settings": {
+        "title": "Pain relief with posture clothing",
+        "section_style": "section-blank"
+      }
     }
   },
   "order": [
@@ -324,6 +357,7 @@
     "1659512569f1cf3047",
     "1659512748326b5967",
     "16595128814470f681",
-    "16595130833070b2f1"
+    "16595130833070b2f1",
+    "16595131862acfe816"
   ]
 }
