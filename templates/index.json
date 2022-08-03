@@ -159,12 +159,72 @@
         "section_style": "section-blank",
         "wrapper_size": ""
       }
+    },
+    "1659512569f1cf3047": {
+      "type": "quotes",
+      "blocks": {
+        "1659512569137a920e-0": {
+          "type": "quote",
+          "settings": {
+            "title": "",
+            "icon": "format_quote",
+            "quote": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "author": "Author's name",
+            "quotes_link": "https:\/\/somelink.com",
+            "text_alignment": "text-center",
+            "text_alignment_mobile": "text-center"
+          }
+        },
+        "1659512569137a920e-1": {
+          "type": "quote",
+          "settings": {
+            "title": "",
+            "icon": "format_quote",
+            "quote": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "author": "Author's name",
+            "quotes_link": "https:\/\/somelink.com",
+            "text_alignment": "text-center",
+            "text_alignment_mobile": "text-center"
+          }
+        },
+        "1659512569137a920e-2": {
+          "type": "quote",
+          "settings": {
+            "title": "",
+            "icon": "format_quote",
+            "quote": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "author": "Author's name",
+            "quotes_link": "https:\/\/somelink.com",
+            "text_alignment": "text-center",
+            "text_alignment_mobile": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "1659512569137a920e-0",
+        "1659512569137a920e-1",
+        "1659512569137a920e-2"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "trustpilot_imagetitle": "shopify:\/\/shop_images\/tp.261cc013.png",
+        "title": "",
+        "subtitle": "",
+        "section_style": "section-blank",
+        "quote_width": "60",
+        "arrows": true,
+        "dots": true,
+        "autoplay": true,
+        "autoplayspeed": 5
+      }
     }
   },
   "order": [
     "16565958709e259b85",
     "1656942069989ae2c9",
     "1654180360d9664fc4",
-    "1657200190f72ca1c0"
+    "1657200190f72ca1c0",
+    "1659512569f1cf3047"
   ]
 }
