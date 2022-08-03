@@ -337,11 +337,22 @@
             "accordion__buttontext": "shop",
             "accordion__LinkUrl": ""
           }
+        },
+        "3c3108af-7850-4cad-a838-88ed336c741f": {
+          "type": "Accordion",
+          "settings": {
+            "accordion_title": "Suffer from an injury?",
+            "accordion__inner-title": "",
+            "accordion__description": "If you have an injury, or if you have a spinal disc herniation, scoliosis, arthritis or related condition, you may benefit from wearing posture corrective clothing. If you haven't been given a diagnosis, we strongly recommend consulting a professional to discuss the best way forward for you. Some professionals may recommend our Posture Shirt™ others our Spinal Q, a vest for posture correction with our most powerful support function. Our products are registered as medical devices and as such you have a guarantee that they are safe for you to use. If you need any advice about our products and which one will be best for you, you can always contact the customer service team.",
+            "accordion__buttontext": "shop",
+            "accordion__LinkUrl": ""
+          }
         }
       },
       "block_order": [
         "1659513186ec7e9cae-0",
-        "1659513186ec7e9cae-1"
+        "1659513186ec7e9cae-1",
+        "3c3108af-7850-4cad-a838-88ed336c741f"
       ],
       "settings": {
         "title": "Pain relief with posture clothing",
