@@ -239,7 +239,7 @@
         "mobile_grid": "2",
         "show_view_all": true,
         "button_label": "See more products",
-        "button_link": "",
+        "button_link": "shopify:\/\/collections\/all",
         "button_style": "btn--primary",
         "slider_related_products": true,
         "arrows": true,
