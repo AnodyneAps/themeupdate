@@ -254,8 +254,9 @@
         "16595128814be99d47-0": {
           "type": "text_block",
           "settings": {
-            "title": "Add a title or tagline",
-            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+            "image": "shopify:\/\/shop_images\/Checkmark.png",
+            "title": "The original product for posture correction",
+            "text": "<p>The original posture clothing from ActivePosture®  is the only that is both FDA-registered and CE-registrered as a medical device and can be bought on<a href=\"https:\/\/www.activeposture.co.uk\/\" title=\"https:\/\/www.activeposture.co.uk\">www.activeposture.co.uk<\/a>or one of our licensed resellers. We are a UK-based company which gives you peace of mind that should you end up with a faulty product or just decide that it is not a product for you, you can easily return it and at no cost.<\/p>"
           }
         },
         "16595128814be99d47-1": {
