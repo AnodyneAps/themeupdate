@@ -296,8 +296,10 @@
         "1659513083303253a7-0": {
           "type": "video",
           "settings": {
+            "video_cover_image": "shopify:\/\/shop_images\/vc.jpg",
             "title": "",
-            "animated_button": false
+            "video_url": "https:\/\/youtu.be\/VvEpFrl3hZQ",
+            "animated_button": true
           }
         }
       },
