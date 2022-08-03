@@ -244,7 +244,7 @@
         "slider_related_products": true,
         "arrows": true,
         "dots": true,
-        "autoplay": false,
+        "autoplay": true,
         "autoplayspeed": 5
       }
     }
