@@ -270,8 +270,9 @@
         "16595128814be99d47-2": {
           "type": "text_block",
           "settings": {
-            "title": "Add a title or tagline",
-            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+            "image": "shopify:\/\/shop_images\/Truck.png",
+            "title": "From Kinesiotape to patented posture clothing",
+            "text": "<p><a href=\"https:\/\/activeposture-uk.myshopify.com\/collections\/all-products\" title=\"All products\"><span style=\"text-decoration:underline\">Posture corrective clothing<\/span><\/a>activates the back muscles, shoulders and shoulder blades without bracing your muscles or joints. The technology behind ActivePosture's posture clothing is inspired by Kinesiotape - a treatment method often used by physiotherapists and chiropractors to treat pain and tension in the neck, shoulders and back. Kinesiotaping is also frequently used by professional athletes to stimulate specific muscle groups and for posture correction.<\/p>"
           }
         }
       },
