@@ -289,6 +289,29 @@
         "section_style": "section-default",
         "text_align": ""
       }
+    },
+    "16595130833070b2f1": {
+      "type": "featured-video",
+      "blocks": {
+        "1659513083303253a7-0": {
+          "type": "video",
+          "settings": {
+            "title": "",
+            "animated_button": false
+          }
+        }
+      },
+      "block_order": [
+        "1659513083303253a7-0"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "full_width": false,
+        "title": "Who we are?",
+        "subtitle": "See our presentation video",
+        "section_style": "section-default"
+      }
     }
   },
   "order": [
@@ -298,6 +321,7 @@
     "1657200190f72ca1c0",
     "1659512569f1cf3047",
     "1659512748326b5967",
-    "16595128814470f681"
+    "16595128814470f681",
+    "16595130833070b2f1"
   ]
 }
