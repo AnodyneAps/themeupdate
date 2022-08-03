@@ -321,10 +321,10 @@
         "1659513186ec7e9cae-0": {
           "type": "Accordion",
           "settings": {
-            "accordion_title": "",
-            "accordion__inner-title": "Working on Desk could be a problem",
-            "accordion__description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quis.",
-            "accordion__buttontext": "Button text",
+            "accordion_title": "NeuroBand™-technology",
+            "accordion__inner-title": "",
+            "accordion__description": "Posture clothing from ActivePosture® is manufactured using a unique composition of polyester, spandex and nylon which makes the clothing durable and breathable while keeping its elasticity, as well as being comfortable to wear. It is designed with the patented NeuroBand™ technology, which is inspired by Kinesiotape. The clothes aim to reflect the contraction and expansion of the muscles to promote natural posture correction.",
+            "accordion__buttontext": "Shop",
             "accordion__LinkUrl": ""
           }
         },
