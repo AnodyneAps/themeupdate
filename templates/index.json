@@ -247,6 +247,45 @@
         "autoplay": true,
         "autoplayspeed": 5
       }
+    },
+    "16595128814470f681": {
+      "type": "featured-icons",
+      "blocks": {
+        "16595128814be99d47-0": {
+          "type": "text_block",
+          "settings": {
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+          }
+        },
+        "16595128814be99d47-1": {
+          "type": "text_block",
+          "settings": {
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+          }
+        },
+        "16595128814be99d47-2": {
+          "type": "text_block",
+          "settings": {
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16595128814be99d47-0",
+        "16595128814be99d47-1",
+        "16595128814be99d47-2"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "title": "",
+        "subtitle": "",
+        "section_style": "section-default",
+        "text_align": ""
+      }
     }
   },
   "order": [
@@ -255,6 +294,7 @@
     "1654180360d9664fc4",
     "1657200190f72ca1c0",
     "1659512569f1cf3047",
-    "1659512748326b5967"
+    "1659512748326b5967",
+    "16595128814470f681"
   ]
 }
