@@ -1376,6 +1376,7 @@ $class-type: unquote(".");
   text-decoration: none;
   vertical-align: middle;
   white-space: normal;
+  border-radius: 5px;
 {% if settings.button_uppercase %}
   text-transform: uppercase;
 {% endif %}
@@ -1405,9 +1406,9 @@ $class-type: unquote(".");
       opacity: 1;
       color: $color;
       background-color: darken($background, 7.5%);
-      border-color: darken($background, 10%);
+      border-color: darken($background, 20%);
       {%- if settings.button_enable_outline -%}
-        @include shadow(0 0 0 0.2rem adaptive-color($background, 20%));
+        @include shadow(0 0 0 1px adaptive-color($background, 20%));
       {%- endif -%}
     }
 
@@ -3015,7 +3016,7 @@ button {
 // Default
 .btn {
   @include buttonBase;
-  @include button($cPrimary, $colorBodyText);
+  @include button(lighten($cAccent,4%), $white);
 }
 
 // Colors
