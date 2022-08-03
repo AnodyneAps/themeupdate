@@ -262,8 +262,9 @@
         "16595128814be99d47-1": {
           "type": "text_block",
           "settings": {
-            "title": "Add a title or tagline",
-            "text": "<p>Use this text to describe what makes your store stand out from others and why customers should buy from you.<\/p>"
+            "image": "shopify:\/\/shop_images\/Smile2.png",
+            "title": "Posture clothing with 100% satisfaction guarante",
+            "text": "<p>Peace of mind: At ActivePosture® we always offer free returns and a generous 30-day risk-free trial period of our products. Use your new product for all your everyday activities and find out if it lives up to your expectations. With our 100% satisfaction guarantee you can return the product, despite it being used, within 30 days for a full refund, no questions asked.<\/p>"
           }
         },
         "16595128814be99d47-2": {
