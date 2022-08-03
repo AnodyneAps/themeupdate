@@ -358,6 +358,17 @@
         "title": "Pain relief with posture clothing",
         "section_style": "section-blank"
       }
+    },
+    "1659519187d1c8a097": {
+      "type": "newsletter",
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true,
+        "title": "Subscribe to our newsletter",
+        "subtitle": "A short sentence describing what someone will receive by subscribing",
+        "section_style": "section-blank",
+        "customer_tag": "newsletter"
+      }
     }
   },
   "order": [
@@ -369,6 +380,7 @@
     "1659512748326b5967",
     "16595128814470f681",
     "16595130833070b2f1",
-    "16595131862acfe816"
+    "16595131862acfe816",
+    "1659519187d1c8a097"
   ]
 }
