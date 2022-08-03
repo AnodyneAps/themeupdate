@@ -366,7 +366,7 @@
         "show_on_mobile": true,
         "title": "Subscribe to our newsletter",
         "subtitle": "A short sentence describing what someone will receive by subscribing",
-        "section_style": "section-blank",
+        "section_style": "section-default",
         "customer_tag": "newsletter"
       }
     }
