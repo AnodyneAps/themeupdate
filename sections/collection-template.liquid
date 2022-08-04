@@ -12,12 +12,6 @@
               <div class="page-title-wrapper">
                 <h1 class="page-title">{{ collection.title }}</h1>
               </div>
-
-              {%- unless collection.description == blank -%}
-                <p class="collection-description text-lead">
-                  {{ collection.description }}
-                </p>
-              {%- endunless -%}
             </div>
           </div>
         </div>
@@ -295,6 +289,11 @@
           </div>
 
           {%- render "pagination" with paginate as paginate -%}
+          {%- unless collection.description == blank -%}
+          <p class="collection-description text-lead">
+            {{ collection.description }}
+          </p>
+        {%- endunless -%}
         {%- endpaginate -%}
       </div>
     </div>

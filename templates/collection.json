@@ -17,8 +17,8 @@
     }
   },
   "order": [
-    "collection-image",
     "breadcrumbs",
+    "collection-image",
     "main"
   ]
 }
