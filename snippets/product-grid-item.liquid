@@ -61,8 +61,13 @@
   <div class="card grid-product__wrapper{% if image_hover %} has-hover-image{% endif %}">
     <div class="grid-product__image-wrapper">
       <a href="{{ product_link }}" class="grid-product__image-link">
-        {%- assign media = product.media.first -%}
 
+        {%- assign media = product.media.first -%}
+        {%- comment -%} for zipper product add zip image start {%- endcomment -%}
+        {% if product_link  contains 'zipper' %}
+        <span class="zipper__product"></span>
+        {% endif %}
+        {%- comment -%} for zipper product add zip image end {%- endcomment -%}
         {%- if emptyState -%}
           {{ 'product-' | append: current | placeholder_svg_tag: 'card-image placeholder-svg' }}
         {%- elsif media != blank -%}

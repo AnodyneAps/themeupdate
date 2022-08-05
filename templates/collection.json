@@ -1,18 +1,29 @@
 {
   "sections": {
-    "main": {
-      "type": "collection-template",
+    "breadcrumbs": {
+      "type": "breadcrumbs",
       "settings": {
       }
     },
     "collection-image": {
       "type": "collection-image",
       "settings": {
+        "stars_text": "{{ collection.metafields.theme.collection_banner.value }}",
+        "stars_url": ""
       }
     },
-    "breadcrumbs": {
-      "type": "breadcrumbs",
+    "main": {
+      "type": "collection-template",
       "settings": {
+        "collection_tags_enable": false,
+        "collection_tags_count": false,
+        "collection_multiple_tags_filtering_enable": false,
+        "collection_sort_enable": false,
+        "tag_selector": "button",
+        "collection_layout": "grid",
+        "rows": "4",
+        "desktop_grid": "4",
+        "mobile_grid": "2"
       }
     }
   },

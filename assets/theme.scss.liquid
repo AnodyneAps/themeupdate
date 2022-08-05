@@ -4024,11 +4024,14 @@ table {
 .media-half{
   display: block;
   position: absolute;
-  width: 50%;
+  width: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  @include screenUp($postSmall){
+  width: 50%; 
+  }
 }
 .media-content {
   position: relative;
@@ -4976,6 +4979,19 @@ cite {
 
     &.grid-xsmall {
       margin-bottom: -$gutter-xs;
+    }
+  }
+  .zipper__product{
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0539/3527/6214/files/zipper2.svg?v=1659692396');
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    z-index: 12;
+    @include screen($small){
+      max-width: 20%;
     }
   }
 }
@@ -11134,28 +11150,62 @@ body:not(.dbtfy-wish_list-destroy) {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  @include screenUp($postSmall){
+    flex-direction: row;
+  }
   .collection-image-inner-container{
     flex: 1;
-    max-width: 50%; 
+    max-width: 100%; 
+    @include screenUp($postSmall){
+      max-width: 50%; 
+    }
   }
 .collection-title-wrapper {
-  flex: 1;
-  max-width: 30%; 
+  width: 96%;
+  z-index: 99;
+  text-align: center;
+  background: white;
+  position: absolute;
+  bottom: -60px;
+  padding: 15px 15px 0 15px;
+  @include screenUp($postSmall){
+    flex: 1;
+    max-width: 30%; 
+    position: initial;
+    bottom: 0;
+    text-align: left;
+  }
+
   .collection-title{ 
     font-size: 40px;
     letter-spacing: 1px;
     text-transform: capitalize;
   }
+  .stars-link-container {
+    display: block;
+    margin-top: -$gutter-sm;
+  }
 }
 }
-.seo-text{
-padding: 0 2rem;
-@include screenUp($postSmall){
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-.cols>h2{
-  font-size: 20px;
-}
+.bottom-description{
+  .bottom-description__title{
+    text-align: center;
+    margin-bottom: $gutter;
+  }
+  .bottom-description__seo-text{
+      padding: 0 2rem;
+      @include screenUp($postSmall){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .cols>h2{
+        font-size: 20px;
+      }
+      .cols  a {
+        color: $cPrimary;
+        text-decoration: underline;
+      }
+  }
 }
