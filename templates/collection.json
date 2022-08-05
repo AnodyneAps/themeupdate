@@ -9,7 +9,8 @@
       "type": "collection-image",
       "settings": {
         "stars_text": "{{ collection.metafields.theme.collection_banner.value }}",
-        "stars_url": ""
+        "collection_stars": "shopify:\/\/shop_images\/download.png",
+        "stars_url": "https:\/\/www.trustpilot.com"
       }
     },
     "main": {
