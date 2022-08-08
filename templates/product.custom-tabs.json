@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "product-custom-tabs-template",
-      "type": "product-template",
       "settings": {
       }
     },
@@ -58,5 +57,4 @@
     "back-to-collection",
     "quotes"
   ]
-}
 }
