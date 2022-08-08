@@ -265,6 +265,7 @@
 
                 {%- if collection_layout == 'grid' -%}
                   {%- render 'product-grid-item' with product as product, grid_item_width: grid_item_width, current: current -%}
+                 
                 {%- elsif collection_layout == 'list' -%}
                   {%- render 'product-list-item' with product as product, current: current, visible: true -%}
                 {%- elsif collection_layout == 'grid_list' -%}
@@ -286,6 +287,7 @@
                 <a href="{{ settings.browsing_link }}" class="btn btn--primary">{{ 'cart.general.continue_browsing_html' | t }}</a>
               </div>
             {%- endfor -%}
+            {%- render 'product-grid-giff' -%}
           </div>
 
           {%- render "pagination" with paginate as paginate -%}
