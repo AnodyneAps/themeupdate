@@ -11209,3 +11209,51 @@ body:not(.dbtfy-wish_list-destroy) {
       }
   }
 }
+.collection_banner__wrapper{
+  position: relative;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  .gif__image{
+    width: 100%;
+    height:364.95px;
+  }
+  .collection_banner_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:80%;
+    text-align: center;
+    z-index: 2;
+    .collection_banner_title{
+      font-size: 2rem;
+      font-weight: 600;
+      color: $white;
+      text-transform:uppercase;
+    }
+    .collection_banner_btn{
+      display:inline-block;
+      width:50%;
+      height:100%;
+      text-transform: uppercase;
+      color: $white;
+      padding:$gutter-xs $gutter-sm;
+      font-size:0.799rem;
+      background-color: $cAccent;
+      border-radius:5px;
+      cursor: pointer;
+      z-index: 3;
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(lighten($black, 30%), 0.3);
+    z-index: 1;;
+  }
+}
