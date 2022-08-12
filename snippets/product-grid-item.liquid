@@ -60,6 +60,7 @@
 <div class="grid__item grid-product flex {{ grid_item_width }}{% if sold_out %} is-sold-out{% endif %}{% if emptyState %} empty-state{% endif %} grid-view" data-product-card data-product-handle="{{ product.handle }}" data-product-id="{{ product.id }}" data-product-collections="{{ product_collections }}">
   <div class="card grid-product__wrapper{% if image_hover %} has-hover-image{% endif %}">
     <div class="grid-product__image-wrapper">
+
       <a href="{{ product_link }}" class="grid-product__image-link">
 
         {%- assign media = product.media.first -%}
@@ -129,6 +130,8 @@
           echo '</div>'
         endunless
       -%}
+
+      {%- if product.metafields.product.product_custom_label != blank %}<span class="product__custom_label">{{product.metafields.product.product_custom_label}} </span>{%- endif -%}
     </div>
 
     {%- liquid

@@ -450,6 +450,16 @@
 
                   render "dbtfy-color-swatches" with product as product, id: id
                 -%}
+                {%- comment -%}Product direct custom metafield insert start{%- endcomment -%}
+                  {% if product.metafields.product_custom.thumbnail_color_links != blank %}
+                    {{product.metafields.product_custom.thumbnail_color_links}}
+                  {% endif %}
+                  {% if product.metafields.choose_size.choose_product_size_chart != blank%}
+                    <div class="product-top__description">
+                      {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
+                    </div>
+                  {% endif %}
+               {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
 
                 <div class="dbtfy-size-chart-box"></div>
 
@@ -811,3 +821,7 @@
 {{ product.media | where: 'media_type', 'model' | json }}
 </script>
 {%- endunless -%}
+
+
+
+

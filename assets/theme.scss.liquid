@@ -217,7 +217,7 @@ _App_style
 
 // Base font size
 $baseFontSize: {{ settings.base_font_size }}px;
-$baseFontSize-lg: floor($baseFontSize * 1.2);
+$baseFontSize-lg: floor($baseFontSize * 1.4);
 $baseFontSize-sm: floor($baseFontSize * .8);
 $baseFontSize-xs: floor($baseFontSize * .6);
 
@@ -3823,7 +3823,7 @@ table {
   border-radius: $borderRadius;
   table-layout: auto;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
 
   .section-default & {
     background-color: $colorBody;
@@ -3858,13 +3858,13 @@ table {
   tbody {
     tr {
       @include transition($transitions);
-
+      cursor: pointer;
       &:nth-of-type(odd) {
         background-color: rgba($colorDefault, $opacity);
       }
 
       &:hover {
-        background-color: $colorDefault;
+        background-color: lighten($cPrimary, 54%);
       }
     }
   }
@@ -3880,7 +3880,6 @@ table {
 
   // Cells
   th, td {
-    padding: $gutter-sm;
     border-right: $borders;
     border-bottom: $borders;
 
@@ -3895,15 +3894,19 @@ table {
 
   // Td
   td {
-    padding: $gutter-sm;
+    padding:2px 5px;
+    font-size:0.8rem;
   }
 
   // Th
   th{
-    padding: $gutter-xs ($gutter-sm);
-    background-color: $colorHeadings;
-    color: $colorBody;
-    @include accentFontStack;
+    padding:5px;
+    background-color: $cLightGray;
+    color: $cText;
+    font-size:0.9rem;
+    font-weight:200;
+   
+
 
     @include screen($small) {
       font-size: $baseFontSize-sm;
@@ -5369,6 +5372,14 @@ cite {
     font-size: .92rem;
     font-weight: 600;
     color: $cPrimary;
+  }
+  .product__custom_label{
+    background-color: $cAccent;
+    padding: 2px 12px;
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+    color: $white;
   }
 }
 
@@ -7263,7 +7274,39 @@ cite {
     fill: $colorButtonText;
   }
 }
-
+// custom thumbnails color links
+.product-thumbnails_wrapper {
+  margin-bottom: $spacer;
+  .thumbnails_color_links_inner_wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .thumbnail_color_links{
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      border-radius:34px;
+      box-shadow: 0 0 0 2px darken($cLightGray,10%);
+      margin-right:12px;
+      @include transition($transitions);
+      &:hover{
+        transform: scale(1.1);
+      }
+      &.black{
+        background-color: $black;
+      }
+      &.white{
+        background-color: $white;
+      }
+      &.nude{
+        background-color: #e0b296;
+      }
+    }
+    .active-color{
+      box-shadow: 0 0 0 2px $white, 0 0 0 4px $cPrimary;
+    }
+  }
+}
 .product-single-divider {
   @include screen($small) {
     margin-top: $gutter;
@@ -7420,6 +7463,12 @@ cite {
     display: none;
   }
 }
+.product-top__description{
+  margin-bottom: $spacer;
+  a {
+    color: $cPrimary; 
+  }
+}
 
 {%- if settings.show_back_to_collection -%}
 // Back box
@@ -7539,7 +7588,7 @@ body {
 .text-secondary {color: $colorSecondary}
 .text-sale {color: $cAccent}
 .text-small {font-size: $baseFontSize-sm}
-.text-large {font-size: $baseFontSize-lg}
+.text-large {font-size: $baseFontSize-lg; font-weight: 600 !important}
 .text-link {@include linkStyle}
 .text-lead {@include leadFontStack}
 .text-accent {@include accentFontStack}
@@ -11221,6 +11270,8 @@ body:not(.dbtfy-wish_list-destroy) {
   .banner__image{
     object-fit: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    height:360px;
   }
   .collection_banner_content{
     position: absolute;
@@ -11259,5 +11310,23 @@ body:not(.dbtfy-wish_list-destroy) {
     height: 100%;
     background-color: rgba(lighten($black, 50%), 0.1);
     z-index: 1;;
+  }
+  .collection_porcent_tag{
+    position: absolute;
+    top: 10%;
+    right:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: lighten($cAccent, 10%);
+    color:$white;
+    font-size:1.6rem;
+    font-weight:600;
+    padding: $gutter-xs;
+    box-shadow: 0 0 0 2px darken($cAccent, 2%);
+
   }
 }
