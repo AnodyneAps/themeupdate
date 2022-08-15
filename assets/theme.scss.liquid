@@ -7463,11 +7463,54 @@ cite {
     display: none;
   }
 }
-.product-top__description{
-  margin-bottom: $spacer;
+.product__top__description{
+  p {
+    font-size:0.95rem;
+    color: $cTextGray;
+  }
   a {
     color: $cPrimary; 
   }
+  .btn-readmore{
+    color: $cPrimary;
+    text-decoration: underline;
+  }
+.table__container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  @include screenUp($postSmall){
+    flex-direction: row;
+    align-items: center;
+  }
+  table{
+    flex: 2;
+  }
+  .men{
+    margin-bottom: $spacer;
+  }
+  .size-container{
+    flex: 1;
+    height: 178.5px;
+    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      height: 120px;
+      margin-top: $gutter-sm;
+      @include screenUp($postSmall){
+        height: 150px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+.size-info{
+  padding-top:$gutter-xs;
+}
 }
 
 {%- if settings.show_back_to_collection -%}
@@ -11328,5 +11371,15 @@ body:not(.dbtfy-wish_list-destroy) {
     padding: $gutter-xs;
     box-shadow: 0 0 0 2px darken($cAccent, 2%);
 
+  }
+}
+.discount__notification-container{
+  margin: $spacer 0;
+  .discount_notification_link{
+    display: block;
+    padding: 16px 8px 0 8px;
+    border: 1px solid darken($cLightGray,5%);
+    background-color: $cLightGray;
+    cursor: pointer;
   }
 }

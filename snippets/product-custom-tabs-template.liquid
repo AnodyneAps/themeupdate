@@ -455,7 +455,7 @@
                     {{product.metafields.product_custom.thumbnail_color_links}}
                   {% endif %}
                   {% if product.metafields.choose_size.choose_product_size_chart != blank%}
-                    <div class="product-top__description">
+                    <div class="product__top__description">
                       {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
                     </div>
                   {% endif %}
@@ -635,7 +635,17 @@
                 {% render "dbtfy-back-in-stock", product: product, current_variant: current_variant %}
               {%- endif -%}
             </div>
-
+            <!-- Discount notification text start -->
+                {% if section.settings.show_discount_notification %}
+                    <div class="discount__notification-container">
+                      {% if section.settings.discount_notification_text != blank %}
+                          <a href="{% if section.settings.discount_notification_link != blank%}{{ section.settings.discount_notification_link}}{% endif %} " class="discount_notification_link">
+                          {{section.settings.discount_notification_text}}
+                          </a>
+                      {% endif %}
+                  </div>
+              {% endif %}
+          <!-- Discount notification text end -->
             {%- render "dbtfy-trust-badge", position: "product_page" -%}
 
             {%- if settings.dbtfy_product_tabs -%}
@@ -741,25 +751,6 @@
           {%- endif -%}
         {%- endif -%}
 
-        {%- if section.settings.show_product_description -%}
-          {%- if product_description_position == "separate_section" or is_to_split_description -%}
-            <div id="productDescription" class="product-single__description rte spacer-bottom-none">
-              {%- liquid
-                if is_to_split_description
-                  assign second_part = product.description | split: '<p>[split_description]</p>' | last
-
-                  unless second_part contains '[split_description]'
-                    echo second_part
-                  else
-                    echo product.description | split: '[split_description]' | last
-                  endunless
-                else
-                  echo product.description | replace: '<p>[split_description]</p>', '' | replace: '[split_description]', ''
-                endif
-              -%}
-            </div>
-          {%- endif -%}
-        {%- endif -%}
 
 
         {%- liquid
