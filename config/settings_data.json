@@ -30,6 +30,7 @@
     "zindex_drawer": "999",
     "cart_notes_enable": false,
     "color_announcement_bg": "#353535",
+    "color_nav_border": "#f4f4f4",
     "color_nav_text": "#252525",
     "color_default": "#f7f7f7",
     "color_headings": "#252525",
