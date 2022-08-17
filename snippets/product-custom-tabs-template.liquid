@@ -454,13 +454,13 @@
                   {% if product.metafields.product_custom.thumbnail_color_links != blank %}
                     {{product.metafields.product_custom.thumbnail_color_links}}
                   {% endif %}
-                  {%- comment -%}
+      
                   {% if product.metafields.choose_size.choose_product_size_chart != blank%}
                     <div class="product__top__description">
                       {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
                     </div>
                   {% endif %}
-              {%- endcomment -%}
+         
                {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
                   {% if product.handle contains 'mens-posture-shirt' %}
                   <div class="men__sizes-wrapper">
