@@ -454,17 +454,22 @@
                   {% if product.metafields.product_custom.thumbnail_color_links != blank %}
                     {{product.metafields.product_custom.thumbnail_color_links}}
                   {% endif %}
-      
-                  {% if product.metafields.choose_size.choose_product_size_chart != blank%}
-                    <div class="product__top__description">
-                      {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
-                    </div>
-                  {% endif %}
+
+                  {%- if product.metafields.custom.top_description != blank -%}
+                          <div class="product__top__description">
+                            {{product.metafields.custom.top_description}}
+                          </div>
+                  {%- endif -%}
+            
+
          
                {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
-                  {% if product.handle contains 'mens-posture-shirt' %}
+                  {% if title contains 'Men' %}
                   <div class="men__sizes-wrapper">
-                    <p class="find__size">Find your size.</p>
+                    <div class="info-and-btn">
+                      <p class="find__size">Add your Weight number here.</p>
+                      <div class="flex"><span class="material-icons-outlined" aria-hidden="true">content_cut</span><button type="button" class="size__show-btn">Size guide</button></div>
+                    </div>
                     <span>
                       <input class="basic-slide" id="men__sizes" type="number" placeholder="Weight in numbers" /><label for="men__sizes">Find</label>
                     </span>

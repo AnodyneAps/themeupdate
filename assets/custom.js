@@ -10,6 +10,17 @@
 
 })(jQuery);
 
+const sizeBtn = document.querySelector(".size__show-btn");
+const sizesModalContainer = document.querySelector(".sizes__modal-container");
+const sizeBtnClose = document.querySelector(".sizes__modal-close");
+
+sizeBtn.addEventListener("click", (e)=>{
+	sizesModalContainer.classList.add("show-table");
+})
+sizeBtnClose.addEventListener("click", ()=>{
+	sizesModalContainer.classList.remove("show-table");
+})
+
 
 
 //Men size chart functionality
