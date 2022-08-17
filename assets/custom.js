@@ -11,6 +11,63 @@
 })(jQuery);
 
 
+
+//Men size chart functionality
+const btn = document.getElementById("men__sizes");
+const DOM = document.querySelector(".sizes__DOM");
+const loading = `<div class="loader"><img src="https://cdn.shopify.com/s/files/1/0539/3527/6214/files/sizes-loading.gif?v=1660724792" alt="loading"></div>`;
+const url = "https://cdn.shopify.com/s/files/1/0539/3527/6214/files/men_sizes.json?v=1660720097";
+
+
+
+window.addEventListener("load", async ()=>{
+	try{
+		const response = await fetch(url);
+		const data = await response.json();
+		displayItems(data);
+	}catch(error){
+		displayError(error);
+	}
+});
+
+function displayItems(items){
+
+	btn.addEventListener("click", (e)=>{
+		const btnWeight = e.target.value;
+		const displayData = items.map((item)=>{
+			const { id, size } = item;
+			if(btnWeight == ''){
+				return
+			} else {
+				if(btnWeight === id){
+					return `<p class="recommended__size">We recommend size: <span class="size__recommendation">${item.size}</span> for men similar to your weight.</p>`
+				}
+			}
+		}).join(" ");
+		setTimeout(()=>{
+			if(btnWeight == ''){
+				return
+			} else{
+				DOM.innerHTML = loading;
+				setTimeout(()=>{
+					if(btnWeight < 49 ){
+						DOM.innerHTML = `<p class="recommended__size">Please write weight number only for adults. </p>`
+					} else if (btnWeight > 125){
+						DOM.innerHTML = `<p class="recommended__size">Please write weight number between 49 - 125kg. </p>`
+					}else{
+						DOM.innerHTML = displayData;
+					}
+				}, 1000)
+			}
+		}, 1000)
+
+		})
+}
+
+function displayError(err){
+	DOM.innerHTML = `<p class="recommended__size">>There was an error ${err}</p>`;
+}
+
 // variables for accordios
 var accordionBtn = document.querySelectorAll('.accordion__title');
 var allTexts = document.querySelectorAll('.accordion__flex');
@@ -64,8 +121,9 @@ window.addEventListener("scroll", () => {
 }
 	
 });
+if(typeof closeBtn != 'undefined' && closeBtn ){
 
-closeBtn.addEventListener("click", ()=>{
+closeBtn.addEventListener("click", (e)=> {
 	localStorage.setItem("className", "show-flip");
 	let classFromLocalStorage = localStorage.getItem("className");
 	if (!classFromLocalStorage){
@@ -73,7 +131,7 @@ closeBtn.addEventListener("click", ()=>{
 	}
 	flipBar.classList.remove("show-flip");
 });
-
+}
 const checkCookie = () => {
 	let classFromLocalStorage = localStorage.getItem("className");
 	if(classFromLocalStorage == "show-flip") {
@@ -181,3 +239,4 @@ bottomFlip.addEventListener("animationend", e =>{
 
 flipCard.append(topFlip, bottomFlip);
 }
+

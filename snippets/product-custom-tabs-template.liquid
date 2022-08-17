@@ -454,13 +454,24 @@
                   {% if product.metafields.product_custom.thumbnail_color_links != blank %}
                     {{product.metafields.product_custom.thumbnail_color_links}}
                   {% endif %}
+                  {%- comment -%}
                   {% if product.metafields.choose_size.choose_product_size_chart != blank%}
                     <div class="product__top__description">
                       {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
                     </div>
                   {% endif %}
+              {%- endcomment -%}
                {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
-
+                  {% if product.handle contains 'mens-posture-shirt' %}
+                  <div class="men__sizes-wrapper">
+                    <p class="find__size">Find your size.</p>
+                    <span>
+                      <input class="basic-slide" id="men__sizes" type="number" placeholder="Weight in numbers" /><label for="men__sizes">Find</label>
+                    </span>
+                    <div class="sizes__DOM"></div>
+                  </div>
+                  </div>
+                  {% endif %}
                 <div class="dbtfy-size-chart-box"></div>
 
                 {%- form 'product', product, class: form_classes, id: form_id, data-product-form: '' -%}
@@ -751,6 +762,25 @@
           {%- endif -%}
         {%- endif -%}
 
+        {%- if section.settings.show_product_description -%}
+          {%- if product_description_position == "separate_section" or is_to_split_description -%}
+            <div id="productDescription" class="product-single__description rte spacer-bottom-none">
+              {%- liquid
+                if is_to_split_description
+                  assign second_part = product.description | split: '<p>[split_description]</p>' | last
+
+                  unless second_part contains '[split_description]'
+                    echo second_part
+                  else
+                    echo product.description | split: '[split_description]' | last
+                  endunless
+                else
+                  echo product.description | replace: '<p>[split_description]</p>', '' | replace: '[split_description]', ''
+                endif
+              -%}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
 
 
         {%- liquid
