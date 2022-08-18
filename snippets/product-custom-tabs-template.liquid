@@ -461,14 +461,12 @@
                           </div>
                   {%- endif -%}
             
-
-         
                {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
                   {% if title contains 'Men' %}
                   <div class="men__sizes-wrapper">
                     <div class="info-and-btn">
                       <p class="find__size">Add your Weight number here.</p>
-                      <div class="flex"><span class="material-icons-outlined" aria-hidden="true">content_cut</span><button type="button" class="size__show-btn">Size guide</button></div>
+                      <div class="size__show-wrapper"><button type="button" class="size__show-btn"><span class="material-icons-outlined" aria-hidden="true">straighten</span>Size guide</button></div>
                     </div>
                     <span>
                       <input class="basic-slide" id="men__sizes" type="number" placeholder="Weight in numbers" /><label for="men__sizes">Find</label>
@@ -641,7 +639,7 @@
                         </span>
                       </span>
                     </button>
-
+                    <button type="button" class="btn btn__cloud">Add to cloud</button>
                     {%- if settings.enable_payment_button -%}
                       {{ form | payment_button }}
                     {%- endif -%}

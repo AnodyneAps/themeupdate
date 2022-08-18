@@ -13,11 +13,15 @@
 const sizeBtn = document.querySelector(".size__show-btn");
 const sizesModalContainer = document.querySelector(".sizes__modal-container");
 const sizeBtnClose = document.querySelector(".sizes__modal-close");
+const overlayTable = document.querySelector(".overlay-table");
 
 sizeBtn.addEventListener("click", (e)=>{
 	sizesModalContainer.classList.add("show-table");
 })
 sizeBtnClose.addEventListener("click", ()=>{
+	sizesModalContainer.classList.remove("show-table");
+})
+overlayTable.addEventListener("click", ()=>{
 	sizesModalContainer.classList.remove("show-table");
 })
 
@@ -26,7 +30,7 @@ sizeBtnClose.addEventListener("click", ()=>{
 //Men size chart functionality
 const btn = document.getElementById("men__sizes");
 const DOM = document.querySelector(".sizes__DOM");
-const loading = `<div class="loader"><img src="https://cdn.shopify.com/s/files/1/0539/3527/6214/files/sizes-loading.gif?v=1660724792" alt="loading"></div>`;
+const loading = `<div class="loader"><img src="https://cdn.shopify.com/s/files/1/0539/3527/6214/files/sizes-loading_7c4b9867-c8d4-460f-947b-68a032e93cda.gif?v=1660811925" alt="loading"></div>`;
 const url = "https://cdn.shopify.com/s/files/1/0539/3527/6214/files/men_sizes.json?v=1660720097";
 
 
