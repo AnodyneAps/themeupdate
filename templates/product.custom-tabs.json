@@ -31,9 +31,9 @@
       }
     },
     "product-cards": {
-        "type":"product-cards",
-        "settings": { 
-        }
+      "type": "product-cards",
+      "settings": {
+      }
     },
     "upsell-bundles": {
       "type": "dbtfy-upsell-bundles",
