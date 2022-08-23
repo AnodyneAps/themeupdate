@@ -637,7 +637,7 @@
                   {%- endif -%}
 
                   <div class="product-single__add-to-cart">
-                    <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--secondary btn--add-to-cart full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+                    <button type="submit" name="add" id="AddToCart--custom-tabs__template" class="btn btn--secondary btn--add-to-cart full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                       <span class="btn__text">
                         <span class="{{ settings.icon }} button-cart-icon">{{ settings.icon_cart }}</span>
                         <span class="btn__add-to-cart-text">
@@ -926,7 +926,7 @@
     if($('.single-option-radio')){
         $('.variant-label-option-value').html("");
         $('.single-option-radio > input').removeAttr('checked'); 
-        $('#AddToCart--template--15727035252918__main').click(function(event){
+        $('#AddToCart--custom-tabs__template').click(function(event){
           if($('.single-option-radio > input:checked').length){
           setTimeout(function(){$('.single-option-radio > input').removeAttr('checked'); $('.variant-label-option-value').html(""); }, 6000 );
           } else {
