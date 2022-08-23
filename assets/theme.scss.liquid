@@ -218,6 +218,7 @@ _App_style
 // Base font size
 $baseFontSize: {{ settings.base_font_size }}px;
 $baseFontSize-lg: floor($baseFontSize * 1.4);
+$baseFontSize-md: floor($baseFontSize * 1.1);
 $baseFontSize-sm: floor($baseFontSize * .8);
 $baseFontSize-xs: floor($baseFontSize * .6);
 
@@ -316,6 +317,7 @@ $shadowColor: color-control($colorBody);
 $shadowOpacity: 0.07;
 $shadow: 0px 0px 40px rgba($shadowColor, $shadowOpacity);
 $shadow-sm: 0px 0px 40px rgba($shadowColor, $shadowOpacity);
+$shadow-xs: 0px 0px 5px rgba($shadowColor, $shadowOpacity);
 $shadowTop: 0px 0px 40px rgba($shadowColor, $shadowOpacity);
 $shadowBottom: 0px 0px 40px rgba($shadowColor, $shadowOpacity);
 $shadowLeft: 0px 0px 40px rgba($shadowColor, $shadowOpacity);
@@ -1421,6 +1423,42 @@ $class-type: unquote(".");
   }
 }
 
+// Button color
+@mixin cbutton($background, $color, $borderColor, $style: default) {
+  @if $style == "default" {
+    background-color: $background;
+    border-color: $borderColor;
+    color: $color;
+  }
+
+  @else if $style == "outline" {
+    background-color: transparent;
+    border-color: $borderColor;
+    color: $background;
+  }
+
+  @else if $style == "reveal" {
+
+  }
+
+  // Button state
+  &:not(.disabled):not([disabled]) {
+    &:hover, &:focus {
+      opacity: 1;
+      color: $color;
+      background-color: darken($background, 7.5%);
+      border-color: darken($background, 30%);
+      @include shadow(0 0 0 0.1rem adaptive-color($background, 40%));
+    }
+
+    &:active {
+      color: $color;
+      background-color: darken($background, 12.5%);
+      border-color: darken($borderColor, 15%);
+      @include shadow(none);
+    }
+  }
+}
 // Button small
 @mixin buttonSmall {
   padding: $paddingButtonSmallY $paddingButtonSmallX;
@@ -6550,6 +6588,25 @@ cite {
   select {
     background-image: url("{{ 'icon-select-footer.svg' | asset_url }}");
   }
+
+  .site-footer__socials{
+    a {
+      display: block;
+      width:100%;
+      padding:.5rem;
+      color: darken($colorButtonText, 10%);
+      font-size:0.85rem;
+      @include transition($transitions);
+      &:hover{
+        color:$white;
+      }
+
+      .icon-svg{
+        margin-right:.5rem;
+        width:2rem;
+      }
+    }
+  }
 }
 
 // Columns
@@ -7059,7 +7116,7 @@ cite {
 
 /*================ _Cart_ajax ================*/
 #CartDrawer {
-  @include flex-direction(row);
+  @include flex-direction(column);
 }
 
 .ajaxcart-loading {
@@ -7077,6 +7134,10 @@ cite {
   .ajaxcart--is-loading & {
     display: none;
   }
+}
+
+.flex-full__overflowy--auto{
+  overflow-y: auto !important;
 }
 
 .ajaxcart_row {
@@ -7347,6 +7408,16 @@ cite {
   @include screenUp($postSmall) {
     @include flex(50%);
   }
+  .not-select{
+    #not_select-m{ 
+      background: rgba($cAccent,0.9);
+      color:white;
+      border: 2px solid darken($cAccent, 10%);
+      padding: 5px 15px;
+      font-size:1rem;
+      border-radius:5px;
+    }
+  }
 }
 
 // Product form item
@@ -7447,7 +7518,7 @@ cite {
   @include screenUp($postSmall){
     flex-direction: row;
   }
-  .btn--primary{
+  .btn--secondary{
     flex: 1;
   }
   .btn__cloud{
@@ -7490,6 +7561,8 @@ cite {
     color: $cPrimary;
     text-decoration: underline;
   }
+
+}
 .table__container{
   display: flex;
   justify-content: center;
@@ -7526,8 +7599,6 @@ cite {
 .size-info{
   padding-top:$gutter-xs;
 }
-}
-
 {%- if settings.show_back_to_collection -%}
 // Back box
 .back-box {
@@ -7646,6 +7717,7 @@ body {
 .text-secondary {color: $colorSecondary}
 .text-sale {color: $cAccent}
 .text-small {font-size: $baseFontSize-sm}
+.text-md {font-size: $baseFontSize-md; font-weight: 600 !important}
 .text-large {font-size: $baseFontSize-lg; font-weight: 600 !important}
 .text-link {@include linkStyle}
 .text-lead {@include leadFontStack}
@@ -11554,5 +11626,117 @@ body:not(.dbtfy-wish_list-destroy) {
   .sizes__modal-container.show-table + & {
     display: block;
     @include animated(fadeIn);
+  }
+}
+
+//product tabs
+.tabs{
+  padding: 0 $gutter-sm;
+.tabs__selectors{
+  display: flex;
+  border-bottom: 0;
+  background-color: $white;
+  flex-wrap: wrap;
+  @include screenUp($postSmall){
+    display: flex;
+    // border-bottom: 1px solid darken($white, 3%);
+    background-color: $white;
+  }
+  .tab-item {
+    cursor: pointer;
+    padding:12px $gutter-sm;
+    font-size:.85rem;
+    font-weight:500;
+    margin: 2px;
+    border-radius:5px;
+    text-transform: uppercase;
+    @include cbutton(darken($cLightGray,4%), $cText, $cLightGray);
+    @include transition($transitions);
+    @include screenUp($postSmall){
+      font-size:0.90rem;
+    }
+  }
+  .tab-active {
+    background-color: $cPrimary;
+    color: $white;
+  }
+}
+.tabs__content {
+  padding:$gutter-sm 0;
+  text-align: left;
+  font-size: 0.85rem;
+  line-height:1.6;
+  color: lighten($cText, 10%);
+  .content-body {
+    display: none;
+    h2{
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  .show-active {
+    display: block;
+    min-height:120px;
+    max-width: 90%;
+    font-size: 0.95rem;
+    line-height:1.6;
+    @include animated(fadeIn, $transitionDurationFast);
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+}
+//end product tabs
+//product cards
+.product-cards{
+  margin: $gutter 0;
+  .grid-card{
+    padding-left: $gutter-sm;
+    .card-contain{
+      padding: $gutter;
+      background-color: darken($white, 3%);
+      width: 100%;
+      margin:($gutter - 8) 0;
+      border-radius: 5px;
+      @include shadow($shadow-xs);
+      @include screenUp($postSmall){
+        padding: $gutter-sm;
+        margin: $gutter-sm 0;
+      }
+    }
+    .card-contain.card-row-center{
+      text-align: center;
+      .card__content{
+        padding: $gutter-sm 0;
+        .card__content--title{
+          font-size:1rem;
+          color: $cText;
+        }
+        .card__content--text{
+            p{
+              font-size:.9rem;
+              line-height:1.4;
+              color: $cTextGray;
+            }
+        }
+      }
+    }
+    .card-contain.card-row-left{
+      text-align: left;
+      .card__content{
+        padding: $gutter-sm 0;
+        .card__content--title{
+          font-size:1.2rem;
+          color: $cText;
+        }
+        .card__content--text{
+          font-size:.75rem;
+          line-height:1.6;
+        }
+      }
+    }
   }
 }

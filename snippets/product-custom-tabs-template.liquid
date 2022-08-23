@@ -103,6 +103,26 @@
       endunless
     endfor
   endcapture
+
+  if product.metafields.tabs.tab_registered_medical_device != blank 
+  assign show_registeredMedicalDevice = true
+  endif 
+
+  if product.metafields.tabs.tab_use_and_care != blank 
+  assign show_useAndCare = true
+  endif 
+
+  if product.metafields.tabs.tab_user_manual != blank 
+  assign show_userManual = true
+  endif 
+
+  if product.metafields.tabs.tab_material != blank 
+  assign show_material = true
+  endif 
+
+  if product.metafields.tabs.tab_delivery_and_return != blank 
+  assign show_deliveryAndReturns = true
+  endif 
 -%}
 
 {%- capture product_title -%}
@@ -429,7 +449,7 @@
 
               {%- if emptyState -%}
                 <div class="product-single__add-to-cart">
-                  <button type="button" class="btn btn--primary btn--add-to-cart full">
+                  <button type="button" class="btn btn--secondary btn--add-to-cart full">
                     <span class="btn__text">
                       <span class="{{ settings.icon }} button-cart-icon">{{ settings.icon_cart }}</span>
                       <span class="btn__add-to-cart-text">
@@ -461,22 +481,12 @@
                           </div>
                   {%- endif -%}
             
-               {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
-                  {% if title contains 'Men' %}
-                  <div class="men__sizes-wrapper">
-                    <div class="info-and-btn">
-                      <p class="find__size">Add your Weight number here.</p>
-                      <div class="size__show-wrapper"><button type="button" class="size__show-btn"><span class="material-icons-outlined" aria-hidden="true">straighten</span>Size guide</button></div>
-                    </div>
-                    <span>
-                      <input class="basic-slide" id="men__sizes" type="number" placeholder="Weight in numbers" /><label for="men__sizes">Find</label>
-                    </span>
-                    <div class="sizes__DOM"></div>
-                  </div>
-                  </div>
-                  {% endif %}
-                <div class="dbtfy-size-chart-box"></div>
+                   {%- comment -%}Product direct  custom metafield insert start{%- endcomment -%}
+                    {%- if product.metafields.choose_size.choose_product_size_chart != blank -%}
+                    {{pages[product.metafields.choose_size.choose_product_size_chart].content}}
+                    {%- endif -%}
 
+                <div class="dbtfy-size-chart-box"></div>
                 {%- form 'product', product, class: form_classes, id: form_id, data-product-form: '' -%}
                   {%- unless product.has_only_default_variant -%}
                     <div class="grid grid-small">
@@ -506,7 +516,9 @@
                                data-option-name="{{ option.name | escape }}">
                           {{ option.name | escape }}: <span class="variant-label-option-value">{{ first_option_value | escape }}</span>
                         </label>
-
+                        <!-- select size message infobar start -->
+                        <div id="not_select_id" class="not-select"></div>
+                        <!-- select size message infobar end -->
                         {%- if section.settings.product_selector == 'radio' -%}
                           <fieldset class="single-option-radio inline-list"
                             id="ProductSelect-option-{{ forloop.index0 }}">
@@ -625,7 +637,7 @@
                   {%- endif -%}
 
                   <div class="product-single__add-to-cart">
-                    <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--primary btn--add-to-cart full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+                    <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--secondary btn--add-to-cart full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                       <span class="btn__text">
                         <span class="{{ settings.icon }} button-cart-icon">{{ settings.icon_cart }}</span>
                         <span class="btn__add-to-cart-text">
@@ -767,20 +779,81 @@
 
         {%- if section.settings.show_product_description -%}
           {%- if product_description_position == "separate_section" or is_to_split_description -%}
-            <div id="productDescription" class="product-single__description rte spacer-bottom-none">
-              {%- liquid
-                if is_to_split_description
-                  assign second_part = product.description | split: '<p>[split_description]</p>' | last
+            <div id="productDescription" class="product-single__description tabs rte spacer-bottom-none">
+              <div id="read-more"  class="tabs__selectors">
+                <div id="tab-1" class="tab-item tab-active">
+                  {{ 'products.tabs.tab-description' | t }}
+                </div>
+                {%-if show_registeredMedicalDevice -%}
+                <div id="tab-2" class="tab-item">
+                  {{ 'products.tabs.tab-medical' | t }}
+                </div>
+                {%-endif-%}
+                {%-if show_useAndCare-%}
+                <div id="tab-3" class="tab-item">
+                  {{ 'products.tabs.tab-use' | t }}
+                </div>
+                {%-endif-%}
+                {%-if show_userManual-%}
+                <div id="tab-4" class="tab-item">
+                  {{ 'products.tabs.tab-manual' | t }}
+                </div>
+                {%-endif-%}
+                {%-if show_material -%}
+                <div id="tab-5" class="tab-item">
+                  {{ 'products.tabs.tab-material' | t }}
+                </div>
+                {%-endif-%}
+                {%-if show_deliveryAndReturns-%}
+                <div id="tab-6" class="tab-item">
+                  {{ 'products.tabs.tab-delivery' | t }}
+                </div>
+                {%-endif-%}
+              </div>
+              <div class="tabs__content">
+                <div id="tab-1-content" class="content-body show-active">
+                  {%- liquid
+                    if is_to_split_description
+                      assign second_part = product.description | split: '<p>[split_description]</p>' | last
+    
+                      unless second_part contains '[split_description]'
+                        echo second_part
+                      else
+                        echo product.description | split: '[split_description]' | last
+                      endunless
+                    else
+                      echo product.description | replace: '<p>[split_description]</p>', '' | replace: '[split_description]', ''
+                    endif
+                  -%}
+                </div>
+       
+                {%-if show_registeredMedicalDevice -%}
+                <div id="tab-2-content" class="content-body">
+                  {{product.metafields.tabs.tab_registered_medical_device}}
+                </div>
+                {%- endif -%}
+                {%-if show_useAndCare -%}
+                <div id="tab-3-content" class="content-body">
+                  {{product.metafields.tabs.tab_use_and_care}}
+                </div>
+                {%- endif -%}
+                {%-if show_userManual -%}
+                <div id="tab-4-content" class="content-body">
+                  {{ product.metafields.tabs.tab_user_manual }}
+                </div>
+                {%- endif -%}
+                {%-if show_material-%}
+                <div id="tab-5-content" class="content-body">
+                  {{product.metafields.tabs.tab_material}}
+                </div>
+                {%- endif -%}
+                {%-if show_deliveryAndReturns-%}
+                <div id="tab-6-content" class="content-body">
+                  {{product.metafields.tabs.tab_delivery_and_return}}
+                </div>
+                {%- endif -%}
+              </div>
 
-                  unless second_part contains '[split_description]'
-                    echo second_part
-                  else
-                    echo product.description | split: '[split_description]' | last
-                  endunless
-                else
-                  echo product.description | replace: '<p>[split_description]</p>', '' | replace: '[split_description]', ''
-                endif
-              -%}
             </div>
           {%- endif -%}
         {%- endif -%}
@@ -847,5 +920,23 @@
 {%- endunless -%}
 
 
-
+<script>
+  //check if radio wrapper for sizes exists and run the scrips
+  if($('.radio-wrapper').length){  
+    if($('.single-option-radio')){
+        $('.variant-label-option-value').html("");
+        $('.single-option-radio > input').removeAttr('checked'); 
+        $('#AddToCart--template--15727035252918__main').click(function(event){
+          if($('.single-option-radio > input:checked').length){
+          setTimeout(function(){$('.single-option-radio > input').removeAttr('checked'); $('.variant-label-option-value').html(""); }, 6000 );
+          } else {
+          event.preventDefault()
+          $("#not_select_id").html("<p id='not_select-m'> {{ 'products.sizes.choose-size-message' | t }}</p>"); 
+          $('.variant-label-option-value').html("");
+          setTimeout(function(){$("#not_select-m").hide();}, 5000);
+          }
+      });
+    }
+  } 
+</script>
 

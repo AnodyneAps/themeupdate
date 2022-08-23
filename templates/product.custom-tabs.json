@@ -30,6 +30,11 @@
         "text_alignment_mobile": "small--text-center"
       }
     },
+    "product-cards": {
+        "type":"product-cards",
+        "settings": { 
+        }
+    },
     "upsell-bundles": {
       "type": "dbtfy-upsell-bundles",
       "settings": {
@@ -111,6 +116,7 @@
   },
   "order": [
     "main",
+    "product-cards",
     "upsell-bundles",
     "pricing-table",
     "product-recommendations",

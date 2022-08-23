@@ -4,84 +4,12 @@
 	});
 	// scroll smothing for readmore button
 	$('.btn-readmore').on('click', function () {
-		$('html, body').animate({ scrollTop: $(this.hash).offset().top - 80 }, 1000);
+		$('html, body').animate({ scrollTop: $(this.hash).offset().top - 180 }, 1000);
 		return false;
 	});
 
 })(jQuery);
 
-const sizeBtn = document.querySelector(".size__show-btn");
-const sizesModalContainer = document.querySelector(".sizes__modal-container");
-const sizeBtnClose = document.querySelector(".sizes__modal-close");
-const overlayTable = document.querySelector(".overlay-table");
-
-sizeBtn.addEventListener("click", (e)=>{
-	sizesModalContainer.classList.add("show-table");
-})
-sizeBtnClose.addEventListener("click", ()=>{
-	sizesModalContainer.classList.remove("show-table");
-})
-overlayTable.addEventListener("click", ()=>{
-	sizesModalContainer.classList.remove("show-table");
-})
-
-
-
-//Men size chart functionality
-const btn = document.getElementById("men__sizes");
-const DOM = document.querySelector(".sizes__DOM");
-const loading = `<div class="loader"><img src="https://cdn.shopify.com/s/files/1/0539/3527/6214/files/sizes-loading_7c4b9867-c8d4-460f-947b-68a032e93cda.gif?v=1660811925" alt="loading"></div>`;
-const url = "https://cdn.shopify.com/s/files/1/0539/3527/6214/files/men_sizes.json?v=1660720097";
-
-
-
-window.addEventListener("load", async ()=>{
-	try{
-		const response = await fetch(url);
-		const data = await response.json();
-		displayItems(data);
-	}catch(error){
-		displayError(error);
-	}
-});
-
-function displayItems(items){
-
-	btn.addEventListener("click", (e)=>{
-		const btnWeight = e.target.value;
-		const displayData = items.map((item)=>{
-			const { id, size } = item;
-			if(btnWeight == ''){
-				return
-			} else {
-				if(btnWeight === id){
-					return `<p class="recommended__size">We recommend size: <span class="size__recommendation">${item.size}</span> for men similar to your weight.</p>`
-				}
-			}
-		}).join(" ");
-		setTimeout(()=>{
-			if(btnWeight == ''){
-				return
-			} else{
-				DOM.innerHTML = loading;
-				setTimeout(()=>{
-					if(btnWeight < 49 ){
-						DOM.innerHTML = `<p class="recommended__size">Please write weight number only for adults. </p>`
-					} else if (btnWeight > 125){
-						DOM.innerHTML = `<p class="recommended__size">Please write weight number between 49 - 125kg. </p>`
-					}else{
-						DOM.innerHTML = displayData;
-					}
-				}, 1000)
-			}
-		}, 1000)
-
-		})
-}
-
-function displayError(err){
-	DOM.innerHTML = `<p class="recommended__size">>There was an error ${err}</p>`;
-}
 
 // variables for accordios
 var accordionBtn = document.querySelectorAll('.accordion__title');
@@ -255,3 +183,55 @@ bottomFlip.addEventListener("animationend", e =>{
 flipCard.append(topFlip, bottomFlip);
 }
 
+
+//tabs section
+const tabItems = document.querySelectorAll('.tab-item');
+const tabContentItems = document.querySelectorAll('.content-body');
+function selectItem(e) {
+  removeBorder();
+  removeShow();
+  this.classList.add('tab-active');
+  const tabContentItem = document.querySelector(`#${this.id}-content`);
+  tabContentItem.classList.add('show-active');
+}
+
+function removeBorder() {
+  tabItems.forEach(item => {
+    item.classList.remove('tab-active');
+  });
+}
+// Remove show class from all content items
+function removeShow() {
+  tabContentItems.forEach(item => {
+    item.classList.remove('show-active');
+  });
+}
+// Listen for tab item click
+tabItems.forEach(item => {
+  item.addEventListener('click', selectItem);
+});
+
+// relief tabs
+const homeTabBtns = document.querySelectorAll('.home-tabs__wrapper-btns-btn');
+const homeTabItems = document.querySelectorAll('.home-tabs__wrapper-content-img');
+
+function selectHomeTabContents(e) {
+  removeActiveHomeTabClass();
+  removeActiveHomeTabItemClass();
+  this.classList.add('active');
+  const homeTabContentItems = document.querySelector(`#${this.id}-content`);
+  homeTabContentItems.classList.add('active');
+}
+
+homeTabBtns.forEach(tabbtn => tabbtn.addEventListener('click', selectHomeTabContents));
+
+const removeActiveHomeTabClass = () => {
+  homeTabBtns.forEach(tabbtn => {
+    tabbtn.classList.remove('active')
+  })
+}
+const removeActiveHomeTabItemClass = () => {
+  homeTabItems.forEach(homeTabItem => {
+    homeTabItem.classList.remove('active')
+  })
+}
