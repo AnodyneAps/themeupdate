@@ -123,6 +123,10 @@
   if product.metafields.tabs.tab_delivery_and_return != blank 
   assign show_deliveryAndReturns = true
   endif 
+
+  if product.metafields.qbs.quantity_discounts_to_product != blank 
+  assign show_quantity_discounts = true
+  endif 
 -%}
 
 {%- capture product_title -%}
@@ -534,7 +538,6 @@
                                   endunless
                                 endif
                               -%}
-
                               <input type="radio"
                                 {% if option.selected_value == value -%} checked="checked"{% endif %}
                                 value="{{ value | escape }}"
@@ -635,7 +638,9 @@
                       {%- endif -%}
                     </div>
                   {%- endif -%}
-
+                  {% if show_quantity_discounts  %}
+                    {{pages[product.metafields.qbs.quantity_discounts_to_product].content}}
+                  {% endif %}
                   <div class="product-single__add-to-cart">
                     <button type="submit" name="add" id="AddToCart--custom-tabs__template" class="btn btn--secondary btn--add-to-cart full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                       <span class="btn__text">
@@ -939,4 +944,5 @@
     }
   } 
 </script>
+
 

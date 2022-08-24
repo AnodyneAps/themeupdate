@@ -7482,7 +7482,9 @@ cite {
 }
 
 .variant-label-option-value {
-  @include textSub;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 // Hide select
@@ -11736,6 +11738,59 @@ body:not(.dbtfy-wish_list-destroy) {
         .card__content--text{
           font-size:.75rem;
           line-height:1.6;
+        }
+      }
+    }
+  }
+}
+
+.qb__quantity{
+  position: relative;
+  background-color: darken($white, 5%);
+  padding: $gutter-sm $gutter-sm 1px $gutter-sm;
+  &::before{
+    content: " ";
+    position: absolute;
+    top: -10px; 
+    right: 8px; 
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent darken($white, 5%) transparent;
+  }
+  .qb__message{
+    font-size: 1rem;
+    font-weight:600;
+    margin-bottom: 2px;
+  }
+  .qb__list{
+    list-style: none;
+    .qb__item{
+      position: relative;
+      &::before{
+        content:" ";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: $cPrimary;
+        font-weight: bold;
+        display: inline-block; 
+        width: 6px;
+        height: 6px;
+        border-radius:50%;
+        outline: 2px solid lighten($cPrimary, 30%);
+        margin-left: -18px;
+      }
+      .qb__flex{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1px 0;
+        gap:10px;
+        .qb-saved-amount{
+          background-color: lighten($cAccent, 8%);
         }
       }
     }
