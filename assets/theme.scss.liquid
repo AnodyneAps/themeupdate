@@ -4707,7 +4707,7 @@ cite {
 }
 
 .overlay-content {
-  @include colorOverwrite($colorDrawer, $colorDrawerDefault, $colorDrawerBorder, $colorDrawerText, $colorDrawerPrimary, $colorDrawerSecondary, $colorDrawerButtonText, $colorDrawerInput, $colorDrawerErrors, $colorDrawerSalesPrice);
+  @include colorOverwrite($colorDrawer, $colorDrawerDefault, $colorDrawerBorder, $colorDrawerText, $cAccent, $colorDrawerSecondary, $colorDrawerButtonText, $colorDrawerInput, $colorDrawerErrors, $colorDrawerSalesPrice);
 
   // Select
   select {
@@ -10981,7 +10981,7 @@ body:not(.dbtfy-wish_list-destroy) {
     .close__btn::before{
       transform: rotate(45deg);
     }
-    &.fixed-bottom{
+    &.fixed-bottom,&.product-bottom{
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -10990,6 +10990,7 @@ body:not(.dbtfy-wish_list-destroy) {
       height: 40px;
       font-size: 16px;
       flex-direction: row !important;
+      z-index: 999;
       .flip-outer-text{
         color: $white;
         font-size: 1.2rem;

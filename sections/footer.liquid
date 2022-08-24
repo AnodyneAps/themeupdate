@@ -314,7 +314,7 @@
   <div class="bottom-footer">
     <div class="wrapper">
       <div class="grid align-center small--text-center">
-        <div class="bottom-footer__copyright grid__item{% if section.settings.show_payment_icons %} large--six-twelfths medium--six-twelfths{% else %} text-center{% endif %}">
+        <div class="bottom-footer__copyright {% if section.settings.show_payment_icons %} large--six-twelfths medium--six-twelfths{% else %} text-center{% endif %}">
           {%- liquid
             if settings.show_locale_selector or settings.show_currency_selector
               if settings.localization_position == 'footer' or settings.localization_position == 'header_and_footer'
@@ -349,6 +349,13 @@
     </div>
   </div>
 </footer>
+
+{% if template.name != index %}
+{% if section.settings.show_product_counter %}
+   {%- render 'product-clock' -%}
+{% endif %}
+{% endif %}
+
 
 {% schema %}
   {
@@ -421,6 +428,22 @@
         "type": "richtext",
         "id": "custom_credential",
         "label": "t:sections.footer.settings.custom_credential.label"
+      },
+      {
+        "type": "header",
+        "content": "Footer Counter"
+      },
+      {
+        "type": "text",
+        "id": "product_counter_text",
+        "label": "Add counter to text product page",
+        "default": "We send your order in"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_counter",
+        "label": "Show Counter at the bottom of product page and other subpages.",
+        "default": false
       }
     ],
     "blocks" : [
