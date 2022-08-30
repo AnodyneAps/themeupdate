@@ -527,6 +527,21 @@
       "next": "Næste (højre piletast)",
       "prev": "Forrige (venstre piletast)",
       "close": "Luk (Esc)"
+    },
+    "tabs": {
+      "tab-description": "Beskrivelse",
+      "tab-medical": "Teknologi",
+      "tab-use": "Anvendelse",
+      "tab-manual": "Brugsvejledning",
+      "tab-material": "Materialer",
+      "tab-delivery": "Levering og fragt"
+    },
+    "radios": {
+      "radio-one": "",
+      "radio-save-amount": "Spar"
+    },
+    "sizes": {
+      "choose-size-message": "Husk at vælge størrelse"
     }
   },
   "gift_cards": {
